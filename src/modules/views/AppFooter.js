@@ -1,7 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Link from "@material-ui/core/Link";
 import Container from "@material-ui/core/Container";
 import Typography from "../components/Typography";
 import TextField from "../components/TextField";
@@ -79,6 +78,7 @@ export default function AppFooter() {
                     <a
                       href="https://beian.miit.gov.cn/"
                       target="_blank"
+                      rel="noopener noreferrer"
                       style={{ fontSize: "12px", color: "#6a6a6a" }}
                     >
                       陕ICP备2022006197号
@@ -91,6 +91,7 @@ export default function AppFooter() {
                     <a
                       href="https://beian.miit.gov.cn/"
                       target="_blank"
+                      rel="noopener noreferrer"
                       style={{ fontSize: "12px", color: "#6a6a6a" }}
                     >
                       陕ICP备2022006197号-1
