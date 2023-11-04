@@ -4,7 +4,10 @@ import { withStyles } from "@material-ui/core/styles";
 import Button from "../components/Button";
 import Typography from "../components/Typography";
 import ProductHeroLayout from "./ProductHeroLayout";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import backgroundImage from "../../static/background/home_pic.jpeg";
+import backgroundImageCompressed from "../../static/background/home_pic_compressed.jpg";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const styles = (theme) => ({
   background: {
@@ -32,7 +35,13 @@ function ProductHero(props) {
 
   return (
     <ProductHeroLayout backgroundClassName={classes.background}>
-      <img style={{ display: "none" }} src={backgroundImage} alt="" />
+      <LazyLoadImage
+        src={backgroundImage}
+        alt="Background"
+        PlaceholderSrc={backgroundImageCompressed}
+        style={{ display: "none" }}
+        effect="blur"
+      />
       <Typography color="inherit" align="center" variant="h2" marked="center">
         nickwang.online
       </Typography>
