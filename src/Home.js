@@ -17,9 +17,9 @@ const Home = () => (
     <ProductHero />
     <ProductValues />
     <ProductCategories />
-    <ProductHowItWorks />
-    <ProductCTA />
-    <ProductSmokingHero />
+    {/* <ProductHowItWorks /> */}
+    {/* <ProductCTA /> */}
+    {/* <ProductSmokingHero /> */}
     <AppFooter />
   </Fragment>
 );

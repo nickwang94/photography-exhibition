@@ -83,7 +83,7 @@ function ProductValues(props) {
               </Typography>
               <Typography variant="h5">
                 {
-                  "For my photographic endeavors, I primarily use a Canon 80D camera, paired with an 18-135mm f/3.5-5.6 IS STM lens. This versatile setup allows me to adapt to various shooting conditions, from wide-angle landscapes to close-up portraits. While I may not have an extensive array of equipment, I believe in the power of creativity and vision over the sheer number of gadgets. It's not about the gear, but how you use it to tell your visual story."
+                  "For my photographic endeavors, I primarily use a Canon 80D camera, paired with EF-S 18-135mm f/3.5-5.6 IS STM lens, and EF 17-40mm 1:4 L USM. This versatile setup allows me to adapt to various shooting conditions, from wide-angle landscapes to close-up portraits. While I may not have an extensive array of equipment, I believe in the power of creativity and vision over the sheer number of gadgets. It's not about the gear, but how you use it to tell your visual story."
                 }
               </Typography>
             </div>

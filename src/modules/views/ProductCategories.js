@@ -7,6 +7,7 @@ import Typography from "../components/Typography";
 import EchoingSand from "../../static/Landscape/Echoing-Sand.jpeg";
 import WuKangBuild from "../../static/Urban/Wukang-Building.jpeg";
 import Bird from "../../static/Nature/Bird.jpeg";
+import ShanghaiBund from "../../static/Night/Shanghai-Bund.jpeg";
 
 const styles = (theme) => ({
   root: {
@@ -91,14 +92,9 @@ function ProductCategories(props) {
 
   const images = [
     {
-      url: "https://images.unsplash.com/photo-1534081333815-ae5019106622?auto=format&fit=crop&w=400&q=80",
-      title: "Portrait",
-      width: "30%",
-    },
-    {
       url: EchoingSand,
       title: "Landscape",
-      width: "40%",
+      width: "70%",
     },
     {
       url: WuKangBuild,
@@ -111,15 +107,9 @@ function ProductCategories(props) {
       width: "40%",
     },
     {
-      url: "https://images.unsplash.com/photo-1523309996740-d5315f9cc28b?auto=format&fit=crop&w=400&q=80",
+      url: ShanghaiBund,
       title: "Night",
-      width: "30%",
-    },
-
-    {
-      url: "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=400&q=80",
-      title: "Architecture",
-      width: "30%",
+      width: "60%",
     },
   ];
 
