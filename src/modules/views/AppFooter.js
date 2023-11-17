@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
@@ -65,9 +65,12 @@ export default function AppFooter() {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
 
-  const selectLanguage = useCallback((event) => {
-    i18n.changeLanguage(event.target.value);
-  }, []);
+  const selectLanguage = useCallback(
+    (event) => {
+      i18n.changeLanguage(event.target.value);
+    },
+    [i18n]
+  );
 
   return (
     <Typography component="footer" className={classes.root}>
