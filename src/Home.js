@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import withRoot from "./modules/withRoot";
 
 // components
-import NavbarView from "./modules/views/NavbarView";
+// import NavbarView from "./modules/views/NavbarView";
 import ProductHero from "./modules/views/ProductHero";
 import ProductValues from "./modules/views/ProductValues";
 import ProductCategories from "./modules/views/ProductCategories";
@@ -13,7 +13,7 @@ import AppFooter from "./modules/views/AppFooter";
 
 const Home = () => (
   <Fragment>
-    <NavbarView />
+    {/* <NavbarView /> */}
     <ProductHero />
     <ProductValues />
     <ProductCategories />

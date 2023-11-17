@@ -8,13 +8,15 @@
     "@material-ui/icons": "4.2.1",
     "@material-ui/styles": "4.2.1",
     "clsx": "1.0.4",
-    "markdown-to-jsx": "6.10.2",
+    "i18next": "^23.7.6",
+    "markdown-to-jsx": "^6.11.4",
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
+    "react-i18next": "^13.5.0",
     "react-lazy-load-image-component": "^1.6.0",
-    "react-scripts": "3.0.1",
-    "validator": "11.1.0"
+    "react-scripts": "^5.0.1",
+    "validator": "^13.11.0"
   },
   "devDependencies": {
     "typescript": "3.3.3"

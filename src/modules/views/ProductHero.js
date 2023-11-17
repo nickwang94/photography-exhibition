@@ -8,6 +8,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import backgroundImage from "../../static/background/home_pic.jpeg";
 import backgroundImageCompressed from "../../static/background/home_pic_compressed.jpg";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { useTranslation } from "react-i18next";
 
 const styles = (theme) => ({
   background: {
@@ -32,6 +33,7 @@ const styles = (theme) => ({
 
 function ProductHero(props) {
   const { classes } = props;
+  const { t } = useTranslation();
 
   return (
     <ProductHeroLayout backgroundClassName={classes.background}>
@@ -52,7 +54,7 @@ function ProductHero(props) {
         variant="h5"
         className={classes.h5}
       >
-        Capturing Life's Beauty Through My Lens
+        {t("Capturing Life's Beauty Through My Lens")}
       </Typography>
       <Button
         color="secondary"
@@ -62,10 +64,10 @@ function ProductHero(props) {
         component="a"
         href="/sign-up/"
       >
-        Register
+        {t("Register")}
       </Button>
       <Typography variant="body2" color="inherit" className={classes.more}>
-        Embark on a Visual Journey
+        {t("Embark on a Visual Journey")}
       </Typography>
     </ProductHeroLayout>
   );

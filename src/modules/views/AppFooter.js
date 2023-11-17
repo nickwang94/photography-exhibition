@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import Typography from "../components/Typography";
 import TextField from "../components/TextField";
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(8),
     display: "flex",
+    flexFlow: "nowarp",
   },
   iconsWrapper: {
     height: 120,
@@ -50,31 +52,63 @@ const useStyles = makeStyles((theme) => ({
 
 const LANGUAGES = [
   {
-    code: "en-US",
+    code: "en",
     name: "English",
   },
   {
-    code: "fr-FR",
-    name: "Français",
+    code: "zh",
+    name: "Chinese",
   },
 ];
 
 export default function AppFooter() {
   const classes = useStyles();
+  const { t, i18n } = useTranslation();
+
+  const selectLanguage = useCallback((event) => {
+    i18n.changeLanguage(event.target.value);
+  }, []);
 
   return (
     <Typography component="footer" className={classes.root}>
       <Container className={classes.container}>
         <Grid container spacing={5}>
-          <Grid item xs={8} sm={8} md={8}>
+          <Grid item xs={2} sm={2} md={2}>
             <Typography variant="h6" marked="left" gutterBottom>
-              备案号
+              {t("language")}
+            </Typography>
+            <TextField
+              select
+              SelectProps={{
+                native: true,
+                onChange: selectLanguage,
+              }}
+              className={classes.language}
+            >
+              {LANGUAGES.map((item) => (
+                <option value={item.code} key={item.code}>
+                  {t(item.name)}
+                </option>
+              ))}
+            </TextField>
+          </Grid>
+          <Grid item xs={5} sm={5} md={5}>
+            <Typography variant="h6" marked="left" gutterBottom>
+              {t("Contact Me")}
+            </Typography>
+            <Typography variant="body1" marked="left" gutterBottom>
+              {t("Email")} nick.wenkun.wang@outlook.com
+            </Typography>
+          </Grid>
+          <Grid item xs={5} sm={5} md={5}>
+            <Typography variant="h6" marked="left" gutterBottom>
+              {t("Record Number")}
             </Typography>
             <div style={{ fontSize: "12px", color: "#6a6a6a" }}>
               <ul>
                 <li>
                   <div style={{ fontSize: "12px", color: "#6a6a6a" }}>
-                    ICP备案主体信息:
+                    {t("ICP Filing Subject Information")}
                     <a
                       href="https://beian.miit.gov.cn/"
                       target="_blank"
@@ -87,7 +121,7 @@ export default function AppFooter() {
                 </li>
                 <li>
                   <div style={{ fontSize: "12px", color: "#6a6a6a" }}>
-                    ICP备案服务信息:
+                    {t("ICP Filing Service Information")}
                     <a
                       href="https://beian.miit.gov.cn/"
                       target="_blank"
@@ -100,24 +134,6 @@ export default function AppFooter() {
                 </li>
               </ul>
             </div>
-          </Grid>
-          <Grid item xs={6} sm={8} md={4}>
-            <Typography variant="h6" marked="left" gutterBottom>
-              Language
-            </Typography>
-            <TextField
-              select
-              SelectProps={{
-                native: true,
-              }}
-              className={classes.language}
-            >
-              {LANGUAGES.map((language) => (
-                <option value={language.code} key={language.code}>
-                  {language.name}
-                </option>
-              ))}
-            </TextField>
           </Grid>
         </Grid>
       </Container>

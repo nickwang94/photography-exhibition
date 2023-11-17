@@ -8,6 +8,7 @@ import EchoingSand from "../../static/Landscape/Echoing-Sand.jpeg";
 import WuKangBuild from "../../static/Urban/Wukang-Building.jpeg";
 import Bird from "../../static/Nature/Bird.jpeg";
 import ShanghaiBund from "../../static/Night/Shanghai-Bund.jpeg";
+import { useTranslation } from "react-i18next";
 
 const styles = (theme) => ({
   root: {
@@ -89,6 +90,7 @@ const styles = (theme) => ({
 
 function ProductCategories(props) {
   const { classes } = props;
+  const { t } = useTranslation();
 
   const images = [
     {
@@ -116,7 +118,7 @@ function ProductCategories(props) {
   return (
     <Container className={classes.root} component="section">
       <Typography variant="h4" marked="center" align="center" component="h2">
-        Explore My Photographic Portfolio
+        {t("Explore My Photographic Portfolio")}
       </Typography>
       <div className={classes.images}>
         {images.map((image) => (
@@ -141,7 +143,7 @@ function ProductCategories(props) {
                 color="inherit"
                 className={classes.imageTitle}
               >
-                {image.title}
+                {t(image.title)}
                 <div className={classes.imageMarked} />
               </Typography>
             </div>
